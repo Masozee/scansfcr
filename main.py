@@ -185,6 +185,7 @@ class LogsChecker:
         self.whatsapp_folders = self._get_whatsapp_folders()
         self.common_folders = self._get_common_folders() if scan_all else []
         self.processed_images = set()
+        self.encryptor = LogEncryption()  # Create encryptor instance
         self.load_processed_images()
         self.nsfw_model = None
         self.nsfw_images_found = 0
@@ -286,20 +287,48 @@ class LogsChecker:
         return folders
     
     def load_processed_images(self):
-        """Load the list of already processed images from a file"""
+        """Load the list of already processed images from an encrypted file"""
         try:
-            with open("processed_images.json", "r") as f:
-                self.processed_images = set(json.load(f))
-            logger.info(f"Loaded {len(self.processed_images)} processed images from file")
-        except (FileNotFoundError, json.JSONDecodeError):
-            logger.info("No processed images file found or invalid format. Starting fresh.")
+            encrypted_file = "processed_images.json.encrypted"
+            if os.path.exists(encrypted_file):
+                # Decrypt and load the file
+                decrypted_data = self.encryptor.decrypt_file(encrypted_file)
+                with open(decrypted_data, 'r') as f:
+                    self.processed_images = set(json.load(f))
+                # Remove temporary decrypted file
+                try:
+                    os.remove(decrypted_data)
+                except:
+                    pass
+                logger.info(f"Loaded {len(self.processed_images)} processed images from encrypted file")
+            else:
+                logger.info("No processed images file found. Starting fresh.")
+                self.processed_images = set()
+        except Exception as e:
+            logger.error(f"Error loading processed images: {e}")
             self.processed_images = set()
     
     def save_processed_images(self):
-        """Save the list of processed images to a file"""
-        with open("processed_images.json", "w") as f:
-            json.dump(list(self.processed_images), f)
-        logger.info(f"Saved {len(self.processed_images)} processed images to file")
+        """Save the list of processed images to an encrypted file"""
+        try:
+            # First save to a temporary file
+            temp_file = "processed_images.temp.json"
+            with open(temp_file, 'w') as f:
+                json.dump(list(self.processed_images), f)
+            
+            # Encrypt the temporary file
+            encrypted_file = "processed_images.json.encrypted"
+            self.encryptor.encrypt_file(temp_file, encrypted_file)
+            
+            # Remove the temporary file
+            try:
+                os.remove(temp_file)
+            except:
+                pass
+                
+            logger.info(f"Saved {len(self.processed_images)} processed images to encrypted file")
+        except Exception as e:
+            logger.error(f"Error saving processed images: {e}")
     
     def _is_image_file(self, file_path):
         """Check if a file is an image based on its extension and mimetype"""
