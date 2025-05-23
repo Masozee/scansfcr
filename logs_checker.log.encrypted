@@ -1,0 +1,245 @@
+2025-05-23 15:52:24,498 - LogsChecker - WARNING - Windows-specific features not available. Will use basic functionality. Error: DLL load failed while importing win32gui: The specified procedure could not be found.
+2025-05-23 15:52:24,745 - LogsChecker - INFO - Found Microsoft Store WhatsApp at: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState
+2025-05-23 15:52:24,746 - LogsChecker - INFO - No processed images file found or invalid format. Starting fresh.
+2025-05-23 15:52:24,746 - LogsChecker - INFO - Scanner initialized on Windows system
+2025-05-23 15:52:24,747 - LogsChecker - INFO - WhatsApp folders to scan: [WindowsPath('C:/Users/NurojiLukmansyah/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState'), WindowsPath('C:/Users/NurojiLukmansyah/Downloads')]
+2025-05-23 15:52:24,747 - LogsChecker - INFO - Common folders to scan: [WindowsPath('C:/Users/NurojiLukmansyah/Downloads'), WindowsPath('C:/Users/NurojiLukmansyah/Pictures'), WindowsPath('C:/Users/NurojiLukmansyah/Documents'), WindowsPath('C:/Users/NurojiLukmansyah/Videos'), WindowsPath('C:/Users/Public/Pictures')]
+2025-05-23 15:52:24,747 - LogsChecker - INFO - Starting WhatsApp NSFW Scanner
+2025-05-23 15:52:24,747 - LogsChecker - INFO - Phase 1: Scanning WhatsApp folders
+2025-05-23 15:52:24,747 - LogsChecker - INFO - Scanning directory: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState
+2025-05-23 15:52:24,807 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\00e4ed6012944cedb69ee7d5f3c3bf73.jpg
+2025-05-23 15:52:30,288 - LogsChecker - INFO - Loading Hugging Face NSFW detection model...
+2025-05-23 15:52:32,612 - tensorflow - WARNING - From E:\Work\nofr\venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-23 15:52:33,450 - LogsChecker - INFO - NSFW detection model loaded successfully
+2025-05-23 15:52:33,653 - LogsChecker - INFO - NSFW detection for 00e4ed6012944cedb69ee7d5f3c3bf73.jpg: {'normal': 0.9995005130767822, 'nsfw': 0.0004995067720301449}
+2025-05-23 15:52:33,654 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\069fc373-ccb3-4748-a33c-bf058cdf98be.webp
+2025-05-23 15:52:33,812 - LogsChecker - INFO - NSFW detection for 069fc373-ccb3-4748-a33c-bf058cdf98be.webp: {'normal': 0.999660849571228, 'nsfw': 0.0003391921636648476}
+2025-05-23 15:52:33,813 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\084acb58-e302-4759-8168-bd2d16a1a676.webp
+2025-05-23 15:52:33,958 - LogsChecker - INFO - NSFW detection for 084acb58-e302-4759-8168-bd2d16a1a676.webp: {'normal': 0.9891383051872253, 'nsfw': 0.010861724615097046}
+2025-05-23 15:52:33,959 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\0a39ed0f-896e-467e-8954-94aabca25afd.webp
+2025-05-23 15:52:34,097 - LogsChecker - INFO - NSFW detection for 0a39ed0f-896e-467e-8954-94aabca25afd.webp: {'normal': 0.9926899075508118, 'nsfw': 0.007310064975172281}
+2025-05-23 15:52:34,097 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\13e97144-3458-4e19-a8ac-b714a05f6552.webp
+2025-05-23 15:52:34,248 - LogsChecker - INFO - NSFW detection for 13e97144-3458-4e19-a8ac-b714a05f6552.webp: {'normal': 0.9991005659103394, 'nsfw': 0.000899470061995089}
+2025-05-23 15:52:34,249 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\1502dd2e-acaf-4aa4-b7ec-6830559059b5.webp
+2025-05-23 15:52:34,417 - LogsChecker - INFO - NSFW detection for 1502dd2e-acaf-4aa4-b7ec-6830559059b5.webp: {'normal': 0.9997977614402771, 'nsfw': 0.00020227460481692106}
+2025-05-23 15:52:34,418 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\1b4b777d-695f-4867-aa59-d9a8ca16c139.webp
+2025-05-23 15:52:34,571 - LogsChecker - INFO - NSFW detection for 1b4b777d-695f-4867-aa59-d9a8ca16c139.webp: {'normal': 0.9998745918273926, 'nsfw': 0.00012539848103187978}
+2025-05-23 15:52:34,571 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\274e5871-4b38-4a52-ab3a-556a3b9131a1.webp
+2025-05-23 15:52:34,710 - LogsChecker - INFO - NSFW detection for 274e5871-4b38-4a52-ab3a-556a3b9131a1.webp: {'normal': 0.9993621706962585, 'nsfw': 0.0006378875696100295}
+2025-05-23 15:52:34,711 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\290fe54e-a36e-456a-a772-44e3239c6485.webp
+2025-05-23 15:52:34,857 - LogsChecker - INFO - NSFW detection for 290fe54e-a36e-456a-a772-44e3239c6485.webp: {'normal': 0.8886834383010864, 'nsfw': 0.11131663620471954}
+2025-05-23 15:52:34,858 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\29573609-669f-4fa1-8eed-cbc0ce1964eb.webp
+2025-05-23 15:52:35,020 - LogsChecker - INFO - NSFW detection for 29573609-669f-4fa1-8eed-cbc0ce1964eb.webp: {'normal': 0.9994204044342041, 'nsfw': 0.0005796584882773459}
+2025-05-23 15:52:35,021 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\2a7ff5ef6a5048139d4746ca962b008e.jpg
+2025-05-23 15:52:35,184 - LogsChecker - INFO - NSFW detection for 2a7ff5ef6a5048139d4746ca962b008e.jpg: {'normal': 0.9971370697021484, 'nsfw': 0.0028628972359001637}
+2025-05-23 15:52:35,184 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\2b515ae7-6db7-4721-82c0-5ff7d05731ea.webp
+2025-05-23 15:52:35,334 - LogsChecker - INFO - NSFW detection for 2b515ae7-6db7-4721-82c0-5ff7d05731ea.webp: {'normal': 0.9996809959411621, 'nsfw': 0.0003190107236150652}
+2025-05-23 15:52:35,335 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\2bf58883d4a14dd0a2ee65f18d5679bf.jpg
+2025-05-23 15:52:35,472 - LogsChecker - INFO - NSFW detection for 2bf58883d4a14dd0a2ee65f18d5679bf.jpg: {'normal': 0.9994295239448547, 'nsfw': 0.0005704217473976314}
+2025-05-23 15:52:35,472 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\2d268a4b-cf04-42b5-b0ce-abf8ac8cf343.webp
+2025-05-23 15:52:35,639 - LogsChecker - INFO - NSFW detection for 2d268a4b-cf04-42b5-b0ce-abf8ac8cf343.webp: {'normal': 0.9996809959411621, 'nsfw': 0.0003190107236150652}
+2025-05-23 15:52:35,640 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\352f006f-297c-455c-bcbb-1005240e977a.webp
+2025-05-23 15:52:35,790 - LogsChecker - INFO - NSFW detection for 352f006f-297c-455c-bcbb-1005240e977a.webp: {'normal': 0.8435114026069641, 'nsfw': 0.1564885973930359}
+2025-05-23 15:52:35,790 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\38190e8c-be1e-493f-9aec-997b6b5431cd.webp
+2025-05-23 15:52:35,929 - LogsChecker - INFO - NSFW detection for 38190e8c-be1e-493f-9aec-997b6b5431cd.webp: {'normal': 0.9981365203857422, 'nsfw': 0.0018635056912899017}
+2025-05-23 15:52:35,930 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\38f95392-5264-4cc1-bd42-3bfb1080ea2d.webp
+2025-05-23 15:52:36,096 - LogsChecker - INFO - NSFW detection for 38f95392-5264-4cc1-bd42-3bfb1080ea2d.webp: {'normal': 0.9981365203857422, 'nsfw': 0.0018635056912899017}
+2025-05-23 15:52:36,097 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\3ca2bffb-d6ca-41e3-b0fe-ddf4bc7b1c36.webp
+2025-05-23 15:52:36,244 - LogsChecker - INFO - NSFW detection for 3ca2bffb-d6ca-41e3-b0fe-ddf4bc7b1c36.webp: {'normal': 0.9983166456222534, 'nsfw': 0.001683346345089376}
+2025-05-23 15:52:36,245 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\404a3928-72df-4d3c-8b26-1a31e2ff1573.webp
+2025-05-23 15:52:36,397 - LogsChecker - INFO - NSFW detection for 404a3928-72df-4d3c-8b26-1a31e2ff1573.webp: {'normal': 0.9998470544815063, 'nsfw': 0.0001529544679215178}
+2025-05-23 15:52:36,398 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\475894b7-a099-49bc-b5b9-5ad12c8361fb.webp
+2025-05-23 15:52:36,556 - LogsChecker - INFO - NSFW detection for 475894b7-a099-49bc-b5b9-5ad12c8361fb.webp: {'normal': 0.9997325539588928, 'nsfw': 0.0002674149873200804}
+2025-05-23 15:52:36,556 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\4c977a19-3334-44be-b56c-e937dbb21fa0.webp
+2025-05-23 15:52:36,711 - LogsChecker - INFO - NSFW detection for 4c977a19-3334-44be-b56c-e937dbb21fa0.webp: {'normal': 0.9997422099113464, 'nsfw': 0.00025783281307667494}
+2025-05-23 15:52:36,711 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\4e46f6ef-30cc-4a39-b8ca-2041b93e6950.webp
+2025-05-23 15:52:36,853 - LogsChecker - INFO - NSFW detection for 4e46f6ef-30cc-4a39-b8ca-2041b93e6950.webp: {'normal': 0.999752938747406, 'nsfw': 0.0002471091574989259}
+2025-05-23 15:52:36,853 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\4f0ec74d-37c9-4e0e-8094-8adc2b2c7ef5.webp
+2025-05-23 15:52:37,015 - LogsChecker - INFO - NSFW detection for 4f0ec74d-37c9-4e0e-8094-8adc2b2c7ef5.webp: {'normal': 0.9998499155044556, 'nsfw': 0.0001501201477367431}
+2025-05-23 15:52:37,016 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\61038d9b-efa6-413a-8f67-ef403cd237c9.webp
+2025-05-23 15:52:37,170 - LogsChecker - INFO - NSFW detection for 61038d9b-efa6-413a-8f67-ef403cd237c9.webp: {'normal': 0.9997977614402771, 'nsfw': 0.00020227460481692106}
+2025-05-23 15:52:37,170 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\661a6c0c-f88b-487b-a509-725b1c46e62f.webp
+2025-05-23 15:52:37,319 - LogsChecker - INFO - NSFW detection for 661a6c0c-f88b-487b-a509-725b1c46e62f.webp: {'normal': 0.9808775186538696, 'nsfw': 0.01912248134613037}
+2025-05-23 15:52:37,320 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\66e8d366-642a-4a62-9067-c07d77e3621a.webp
+2025-05-23 15:52:37,469 - LogsChecker - INFO - NSFW detection for 66e8d366-642a-4a62-9067-c07d77e3621a.webp: {'normal': 0.8773342967033386, 'nsfw': 0.12266568094491959}
+2025-05-23 15:52:37,470 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\6b3a4408-790c-44b0-8900-8a8cb513ec5e.webp
+2025-05-23 15:52:37,621 - LogsChecker - INFO - NSFW detection for 6b3a4408-790c-44b0-8900-8a8cb513ec5e.webp: {'normal': 0.9997990727424622, 'nsfw': 0.00020100187975913286}
+2025-05-23 15:52:37,622 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\72c2c15d-ce5d-4665-bb08-ee1a093b8da9.webp
+2025-05-23 15:52:37,772 - LogsChecker - INFO - NSFW detection for 72c2c15d-ce5d-4665-bb08-ee1a093b8da9.webp: {'normal': 0.9998500347137451, 'nsfw': 0.00014998049300629646}
+2025-05-23 15:52:37,772 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\73dc3e6d-d3af-49ad-83a8-9fbb8af838e2.webp
+2025-05-23 15:52:37,940 - LogsChecker - INFO - NSFW detection for 73dc3e6d-d3af-49ad-83a8-9fbb8af838e2.webp: {'normal': 0.9997449517250061, 'nsfw': 0.0002550032513681799}
+2025-05-23 15:52:37,941 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\74fdcae6-05d3-4440-9d4e-6a31639be44b.webp
+2025-05-23 15:52:38,101 - LogsChecker - INFO - NSFW detection for 74fdcae6-05d3-4440-9d4e-6a31639be44b.webp: {'normal': 0.9998238682746887, 'nsfw': 0.0001761095627443865}
+2025-05-23 15:52:38,102 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\8131560d-783e-4e7b-994b-d99706f716d7.webp
+2025-05-23 15:52:38,258 - LogsChecker - INFO - NSFW detection for 8131560d-783e-4e7b-994b-d99706f716d7.webp: {'normal': 0.9994204044342041, 'nsfw': 0.0005796584882773459}
+2025-05-23 15:52:38,287 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\817eb7f6515d4f59afd24fb86ef34120.jpg
+2025-05-23 15:52:38,431 - LogsChecker - INFO - NSFW detection for 817eb7f6515d4f59afd24fb86ef34120.jpg: {'normal': 0.9994055032730103, 'nsfw': 0.0005945368902757764}
+2025-05-23 15:52:38,431 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\83f59283-3849-4ab5-afd1-ff7ab5c90cce.webp
+2025-05-23 15:52:38,611 - LogsChecker - INFO - NSFW detection for 83f59283-3849-4ab5-afd1-ff7ab5c90cce.webp: {'normal': 0.9998294115066528, 'nsfw': 0.00017059488163795322}
+2025-05-23 15:52:38,612 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\84d6e520-d70b-4fa5-a857-b8486884ad29.webp
+2025-05-23 15:52:38,751 - LogsChecker - INFO - NSFW detection for 84d6e520-d70b-4fa5-a857-b8486884ad29.webp: {'normal': 0.9997045397758484, 'nsfw': 0.0002953966904897243}
+2025-05-23 15:52:38,752 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\87c172a2-63eb-43ef-81ab-7129af82066f.webp
+2025-05-23 15:52:38,903 - LogsChecker - INFO - NSFW detection for 87c172a2-63eb-43ef-81ab-7129af82066f.webp: {'normal': 0.9985620379447937, 'nsfw': 0.0014380156062543392}
+2025-05-23 15:52:38,904 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\88bdf0a8-b69d-4cb7-9c70-5be2c83058c6.webp
+2025-05-23 15:52:39,059 - LogsChecker - INFO - NSFW detection for 88bdf0a8-b69d-4cb7-9c70-5be2c83058c6.webp: {'normal': 0.9971979856491089, 'nsfw': 0.00280201924033463}
+2025-05-23 15:52:39,060 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\89cf3c74-c7d0-44b5-b3c2-4b3d31eb1e7d.webp
+2025-05-23 15:52:39,204 - LogsChecker - INFO - NSFW detection for 89cf3c74-c7d0-44b5-b3c2-4b3d31eb1e7d.webp: {'normal': 0.9998576641082764, 'nsfw': 0.0001422819768777117}
+2025-05-23 15:52:39,204 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\8b27b37f-9c50-4f0e-9c74-1fb44f4f7769.webp
+2025-05-23 15:52:39,362 - LogsChecker - INFO - NSFW detection for 8b27b37f-9c50-4f0e-9c74-1fb44f4f7769.webp: {'normal': 0.9997943043708801, 'nsfw': 0.00020571413915604353}
+2025-05-23 15:52:39,363 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\8c5dbc54-a88b-428a-8fac-2c589b3e8af1.webp
+2025-05-23 15:52:39,517 - LogsChecker - INFO - NSFW detection for 8c5dbc54-a88b-428a-8fac-2c589b3e8af1.webp: {'normal': 0.9989344477653503, 'nsfw': 0.0010654943762347102}
+2025-05-23 15:52:39,518 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\8ec199b6-7a6d-4d2b-b224-ff952bbbad2a.webp
+2025-05-23 15:52:39,684 - LogsChecker - INFO - NSFW detection for 8ec199b6-7a6d-4d2b-b224-ff952bbbad2a.webp: {'normal': 0.9997835755348206, 'nsfw': 0.00021642640058416873}
+2025-05-23 15:52:39,684 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\983aa0ad-aa6b-4e54-8106-0a65773cbfdf.webp
+2025-05-23 15:52:39,839 - LogsChecker - INFO - NSFW detection for 983aa0ad-aa6b-4e54-8106-0a65773cbfdf.webp: {'normal': 0.9991827607154846, 'nsfw': 0.0008172160596586764}
+2025-05-23 15:52:39,839 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\a2f64cd8-f6db-41a0-b22f-50702090721a.webp
+2025-05-23 15:52:40,014 - LogsChecker - INFO - NSFW detection for a2f64cd8-f6db-41a0-b22f-50702090721a.webp: {'normal': 0.9997137188911438, 'nsfw': 0.0002862628607545048}
+2025-05-23 15:52:40,014 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\a5991bb5-d6c2-4060-9343-62cc0d1dc625.webp
+2025-05-23 15:52:40,230 - LogsChecker - INFO - NSFW detection for a5991bb5-d6c2-4060-9343-62cc0d1dc625.webp: {'normal': 0.9996521472930908, 'nsfw': 0.0003478177823126316}
+2025-05-23 15:52:40,230 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\a7e41881-6db7-40fe-bd58-c5ba5022f8fd.webp
+2025-05-23 15:52:40,409 - LogsChecker - INFO - NSFW detection for a7e41881-6db7-40fe-bd58-c5ba5022f8fd.webp: {'normal': 0.9998499155044556, 'nsfw': 0.0001501201477367431}
+2025-05-23 15:52:40,409 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\b18e3dc4-b6a8-45b7-ba53-be2fde0e6204.webp
+2025-05-23 15:52:40,583 - LogsChecker - INFO - NSFW detection for b18e3dc4-b6a8-45b7-ba53-be2fde0e6204.webp: {'normal': 0.9971755743026733, 'nsfw': 0.0028244382701814175}
+2025-05-23 15:52:40,583 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\b1ee57a976e44bfbaa4cafc06d9c1526.jpg
+2025-05-23 15:52:40,763 - LogsChecker - INFO - NSFW detection for b1ee57a976e44bfbaa4cafc06d9c1526.jpg: {'normal': 0.9997712969779968, 'nsfw': 0.00022866555082146078}
+2025-05-23 15:52:40,764 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\b6c59c4d-5b45-4ad4-9d9b-a63f3589a2fc.webp
+2025-05-23 15:52:40,925 - LogsChecker - INFO - NSFW detection for b6c59c4d-5b45-4ad4-9d9b-a63f3589a2fc.webp: {'normal': 0.9996521472930908, 'nsfw': 0.0003478177823126316}
+2025-05-23 15:52:40,925 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\b8484adf-cb35-4378-821a-5a9d5257ac0c.webp
+2025-05-23 15:52:41,086 - LogsChecker - INFO - NSFW detection for b8484adf-cb35-4378-821a-5a9d5257ac0c.webp: {'normal': 0.9998480081558228, 'nsfw': 0.00015198187611531466}
+2025-05-23 15:52:41,087 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\b8bcf6bd-5437-4487-8d9c-701cf96c55b7.webp
+2025-05-23 15:52:41,232 - LogsChecker - INFO - NSFW detection for b8bcf6bd-5437-4487-8d9c-701cf96c55b7.webp: {'normal': 0.999342143535614, 'nsfw': 0.0006578894099220634}
+2025-05-23 15:52:41,232 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\b93a0479-36cd-4742-9365-8954e25d7f24.webp
+2025-05-23 15:52:41,392 - LogsChecker - INFO - NSFW detection for b93a0479-36cd-4742-9365-8954e25d7f24.webp: {'normal': 0.9933038353919983, 'nsfw': 0.006696199532598257}
+2025-05-23 15:52:41,393 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\bbab4858-ad21-4f44-ac09-f4021443f186.webp
+2025-05-23 15:52:41,562 - LogsChecker - INFO - NSFW detection for bbab4858-ad21-4f44-ac09-f4021443f186.webp: {'normal': 0.9998583793640137, 'nsfw': 0.00014164415188133717}
+2025-05-23 15:52:41,563 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\bc00f2ce-b951-4096-8d2c-388c7216f49b.webp
+2025-05-23 15:52:41,712 - LogsChecker - INFO - NSFW detection for bc00f2ce-b951-4096-8d2c-388c7216f49b.webp: {'normal': 0.9997943043708801, 'nsfw': 0.00020571413915604353}
+2025-05-23 15:52:41,713 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\c002cfa5-406c-4661-b026-e483b8a47915.webp
+2025-05-23 15:52:41,891 - LogsChecker - INFO - NSFW detection for c002cfa5-406c-4661-b026-e483b8a47915.webp: {'normal': 0.9997137188911438, 'nsfw': 0.0002862628607545048}
+2025-05-23 15:52:41,892 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\c6246acd-db6b-4525-ad22-378a9e7357c3.webp
+2025-05-23 15:52:42,103 - LogsChecker - INFO - NSFW detection for c6246acd-db6b-4525-ad22-378a9e7357c3.webp: {'normal': 0.9987533092498779, 'nsfw': 0.001246720552444458}
+2025-05-23 15:52:42,104 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\c9c916cf-191d-4a7a-bda1-4e0c9f869625.webp
+2025-05-23 15:52:42,287 - LogsChecker - INFO - NSFW detection for c9c916cf-191d-4a7a-bda1-4e0c9f869625.webp: {'normal': 0.9998615980148315, 'nsfw': 0.00013842676708009094}
+2025-05-23 15:52:42,289 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\ca78ce29-121d-4ddb-8ea4-105e26dd0d4a.webp
+2025-05-23 15:52:42,457 - LogsChecker - INFO - NSFW detection for ca78ce29-121d-4ddb-8ea4-105e26dd0d4a.webp: {'normal': 0.9995114803314209, 'nsfw': 0.0004884944064542651}
+2025-05-23 15:52:42,459 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\e0eb9c69-3898-4005-8792-aa4be7061a19.webp
+2025-05-23 15:52:42,628 - LogsChecker - INFO - NSFW detection for e0eb9c69-3898-4005-8792-aa4be7061a19.webp: {'normal': 0.9998583793640137, 'nsfw': 0.00014164415188133717}
+2025-05-23 15:52:42,629 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\e1a8e03c-b928-4c67-ae54-5718e6fbbeac.webp
+2025-05-23 15:52:42,810 - LogsChecker - INFO - NSFW detection for e1a8e03c-b928-4c67-ae54-5718e6fbbeac.webp: {'normal': 0.9996669292449951, 'nsfw': 0.0003330358013045043}
+2025-05-23 15:52:42,811 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\e447cd70-bcab-4361-99c5-2dc11435ac7f.webp
+2025-05-23 15:52:42,963 - LogsChecker - INFO - NSFW detection for e447cd70-bcab-4361-99c5-2dc11435ac7f.webp: {'normal': 0.9988935589790344, 'nsfw': 0.0011064595310017467}
+2025-05-23 15:52:42,963 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\e84482cc-3c45-4d84-9f39-3fe7efaccb79.webp
+2025-05-23 15:52:43,142 - LogsChecker - INFO - NSFW detection for e84482cc-3c45-4d84-9f39-3fe7efaccb79.webp: {'normal': 0.9998551607131958, 'nsfw': 0.0001447984395781532}
+2025-05-23 15:52:43,143 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\eefe8f0f-a567-4b80-b583-441d6f8bf866.webp
+2025-05-23 15:52:43,324 - LogsChecker - INFO - NSFW detection for eefe8f0f-a567-4b80-b583-441d6f8bf866.webp: {'normal': 0.9998713731765747, 'nsfw': 0.00012864093878306448}
+2025-05-23 15:52:43,325 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\fa10e6ac-de1f-42da-a222-dac30ca45c41.webp
+2025-05-23 15:52:43,499 - LogsChecker - INFO - NSFW detection for fa10e6ac-de1f-42da-a222-dac30ca45c41.webp: {'normal': 0.9998356103897095, 'nsfw': 0.000164307770319283}
+2025-05-23 15:52:43,500 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\fab0043aeb784957a7eebbf1689b8dc9.jpg
+2025-05-23 15:52:43,689 - LogsChecker - INFO - NSFW detection for fab0043aeb784957a7eebbf1689b8dc9.jpg: {'normal': 0.9996022582054138, 'nsfw': 0.00039779269718565047}
+2025-05-23 15:52:43,690 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\fbe7f8e23011486ca1082c48ccd7776f.jpg
+2025-05-23 15:52:43,870 - LogsChecker - INFO - NSFW detection for fbe7f8e23011486ca1082c48ccd7776f.jpg: {'normal': 0.9989470839500427, 'nsfw': 0.0010529131395742297}
+2025-05-23 15:52:43,870 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\fd34a8dc-5647-490f-ba72-adf837459aff.webp
+2025-05-23 15:52:44,054 - LogsChecker - INFO - NSFW detection for fd34a8dc-5647-490f-ba72-adf837459aff.webp: {'normal': 0.9998480081558228, 'nsfw': 0.00015198187611531466}
+2025-05-23 15:52:44,055 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0001.jpg
+2025-05-23 15:52:44,244 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0001.jpg: {'normal': 0.9995458722114563, 'nsfw': 0.0004541213274933398}
+2025-05-23 15:52:44,244 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0002.jpg
+2025-05-23 15:52:44,445 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0002.jpg: {'normal': 0.9997003078460693, 'nsfw': 0.0002997497795149684}
+2025-05-23 15:52:44,446 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0003.jpg
+2025-05-23 15:52:44,635 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0003.jpg: {'normal': 0.9988859295845032, 'nsfw': 0.0011141118593513966}
+2025-05-23 15:52:44,635 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0004.jpg
+2025-05-23 15:52:44,826 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0004.jpg: {'normal': 0.9986415505409241, 'nsfw': 0.001358455396257341}
+2025-05-23 15:52:44,827 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0005.jpg
+2025-05-23 15:52:44,983 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0005.jpg: {'normal': 0.9993147850036621, 'nsfw': 0.0006852137739770114}
+2025-05-23 15:52:44,983 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0006.jpg
+2025-05-23 15:52:45,182 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0006.jpg: {'normal': 0.9995129108428955, 'nsfw': 0.00048714803415350616}
+2025-05-23 15:52:45,183 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0007.jpg
+2025-05-23 15:52:45,343 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0007.jpg: {'normal': 0.9992743134498596, 'nsfw': 0.0007257456891238689}
+2025-05-23 15:52:45,344 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0008.jpg
+2025-05-23 15:52:45,530 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0008.jpg: {'normal': 0.9998611211776733, 'nsfw': 0.00013889800175093114}
+2025-05-23 15:52:45,531 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0009.jpg
+2025-05-23 15:52:45,709 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0009.jpg: {'normal': 0.9986346364021301, 'nsfw': 0.0013653746573254466}
+2025-05-23 15:52:45,709 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0010.jpg
+2025-05-23 15:52:45,903 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0010.jpg: {'normal': 0.9997051358222961, 'nsfw': 0.00029488347354345024}
+2025-05-23 15:52:45,904 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0011.jpg
+2025-05-23 15:52:46,088 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0011.jpg: {'normal': 0.999527096748352, 'nsfw': 0.00047295226249843836}
+2025-05-23 15:52:46,089 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0012.jpg
+2025-05-23 15:52:46,290 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0012.jpg: {'normal': 0.9998805522918701, 'nsfw': 0.00011941147386096418}
+2025-05-23 15:52:46,291 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0013.jpg
+2025-05-23 15:52:46,472 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0013.jpg: {'normal': 0.9998520612716675, 'nsfw': 0.000147894854308106}
+2025-05-23 15:52:46,472 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0014.jpg
+2025-05-23 15:52:46,683 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0014.jpg: {'normal': 0.9998632669448853, 'nsfw': 0.0001367168442811817}
+2025-05-23 15:52:46,683 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0015.jpg
+2025-05-23 15:52:46,869 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0015.jpg: {'normal': 0.9998039603233337, 'nsfw': 0.0001960887893801555}
+2025-05-23 15:52:46,869 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0016.jpg
+2025-05-23 15:52:47,055 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0016.jpg: {'normal': 0.9997908473014832, 'nsfw': 0.00020920796669088304}
+2025-05-23 15:52:47,056 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0017.jpg
+2025-05-23 15:52:47,240 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0017.jpg: {'normal': 0.9998425245285034, 'nsfw': 0.00015740083472337574}
+2025-05-23 15:52:47,241 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250325-WA0018.jpg
+2025-05-23 15:52:47,420 - LogsChecker - INFO - NSFW detection for IMG-20250325-WA0018.jpg: {'normal': 0.9961207509040833, 'nsfw': 0.003879218129441142}
+2025-05-23 15:52:47,420 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0001.jpg
+2025-05-23 15:52:47,596 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0001.jpg: {'normal': 0.9991496801376343, 'nsfw': 0.000850352575071156}
+2025-05-23 15:52:47,597 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0002.jpg
+2025-05-23 15:52:47,805 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0002.jpg: {'normal': 0.9998260140419006, 'nsfw': 0.00017398867930751294}
+2025-05-23 15:52:47,806 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0003.jpg
+2025-05-23 15:52:47,999 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0003.jpg: {'normal': 0.9994250535964966, 'nsfw': 0.0005750322598032653}
+2025-05-23 15:52:48,000 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0004.jpg
+2025-05-23 15:52:48,172 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0004.jpg: {'normal': 0.9939210414886475, 'nsfw': 0.006078915670514107}
+2025-05-23 15:52:48,172 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0005.jpg
+2025-05-23 15:52:48,358 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0005.jpg: {'nsfw': 0.751552939414978, 'normal': 0.2484470158815384}
+2025-05-23 15:52:48,359 - LogsChecker - WARNING - NSFW content detected in C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0005.jpg
+2025-05-23 15:52:50,383 - LogsChecker - INFO - Successfully sent image to Telegram: IMG-20250326-WA0005.jpg
+2025-05-23 15:52:50,384 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0006.jpg
+2025-05-23 15:52:50,676 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0006.jpg: {'normal': 0.9996602535247803, 'nsfw': 0.00033978864667005837}
+2025-05-23 15:52:50,679 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0008.jpg
+2025-05-23 15:52:50,833 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0008.jpg: {'normal': 0.9996719360351562, 'nsfw': 0.0003281250537838787}
+2025-05-23 15:52:50,833 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0009.jpg
+2025-05-23 15:52:51,022 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0009.jpg: {'normal': 0.9997692704200745, 'nsfw': 0.00023077632067725062}
+2025-05-23 15:52:51,023 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0010.jpg
+2025-05-23 15:52:51,198 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0010.jpg: {'normal': 0.9992920160293579, 'nsfw': 0.0007079110364429653}
+2025-05-23 15:52:51,198 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0011.jpg
+2025-05-23 15:52:51,406 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0011.jpg: {'normal': 0.9998397827148438, 'nsfw': 0.00016017715097405016}
+2025-05-23 15:52:51,407 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0012.jpg
+2025-05-23 15:52:51,633 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0012.jpg: {'normal': 0.9997615218162537, 'nsfw': 0.00023849010176490992}
+2025-05-23 15:52:51,634 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0013.jpg
+2025-05-23 15:52:51,835 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0013.jpg: {'normal': 0.9997968077659607, 'nsfw': 0.00020320850308053195}
+2025-05-23 15:52:51,836 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0014.jpg
+2025-05-23 15:52:52,013 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0014.jpg: {'normal': 0.9998186230659485, 'nsfw': 0.00018143022316507995}
+2025-05-23 15:52:52,013 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0019.jpg
+2025-05-23 15:52:52,197 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0019.jpg: {'normal': 0.9998456239700317, 'nsfw': 0.00015440460992977023}
+2025-05-23 15:52:52,199 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0020.jpg
+2025-05-23 15:52:52,380 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0020.jpg: {'normal': 0.9998433589935303, 'nsfw': 0.00015664099191781133}
+2025-05-23 15:52:52,381 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0021.jpg
+2025-05-23 15:52:52,548 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0021.jpg: {'normal': 0.9989560842514038, 'nsfw': 0.0010438787285238504}
+2025-05-23 15:52:52,549 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0022.jpg
+2025-05-23 15:52:52,737 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0022.jpg: {'normal': 0.9997900128364563, 'nsfw': 0.00021005806047469378}
+2025-05-23 15:52:52,738 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0023.jpg
+2025-05-23 15:52:52,921 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0023.jpg: {'normal': 0.9997156262397766, 'nsfw': 0.00028435199055820704}
+2025-05-23 15:52:52,922 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0024.jpg
+2025-05-23 15:52:53,093 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0024.jpg: {'normal': 0.9997735619544983, 'nsfw': 0.00022647496371064335}
+2025-05-23 15:52:53,094 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0025.jpg
+2025-05-23 15:52:53,306 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0025.jpg: {'normal': 0.9998801946640015, 'nsfw': 0.00011975035158684477}
+2025-05-23 15:52:53,307 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0026.jpg
+2025-05-23 15:52:53,469 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0026.jpg: {'normal': 0.999830961227417, 'nsfw': 0.0001689877244643867}
+2025-05-23 15:52:53,470 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0027.jpg
+2025-05-23 15:52:53,653 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0027.jpg: {'normal': 0.9998063445091248, 'nsfw': 0.00019371381495147943}
+2025-05-23 15:52:53,654 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0028.jpg
+2025-05-23 15:52:53,860 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0028.jpg: {'normal': 0.9998687505722046, 'nsfw': 0.0001312161039095372}
+2025-05-23 15:52:53,861 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0032.jpg
+2025-05-23 15:52:54,026 - LogsChecker - INFO - NSFW detection for IMG-20250326-WA0032.jpg: {'normal': 0.997979462146759, 'nsfw': 0.0020205765031278133}
+2025-05-23 15:52:54,026 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\IMG-20250326-WA0033.jpg
+2025-05-23 15:52:54,151 - LogsChecker - INFO - Scan interrupted by user
+2025-05-23 15:53:19,134 - LogsChecker - WARNING - Windows-specific features not available. Will use basic functionality. Error: DLL load failed while importing win32gui: The specified procedure could not be found.
+2025-05-23 15:53:19,136 - LogsChecker - INFO - Starting in background mode...
+2025-05-23 15:53:19,136 - LogsChecker - INFO - Starting background mode...
+2025-05-23 15:53:19,183 - LogsChecker - INFO - Found Microsoft Store WhatsApp at: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState
+2025-05-23 15:53:19,184 - LogsChecker - INFO - No processed images file found or invalid format. Starting fresh.
+2025-05-23 15:53:19,184 - LogsChecker - INFO - Scanner initialized on Windows system
+2025-05-23 15:53:19,184 - LogsChecker - INFO - WhatsApp folders to scan: [WindowsPath('C:/Users/NurojiLukmansyah/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState'), WindowsPath('C:/Users/NurojiLukmansyah/Downloads')]
+2025-05-23 15:53:19,184 - LogsChecker - INFO - Common folders to scan: [WindowsPath('C:/Users/NurojiLukmansyah/Downloads'), WindowsPath('C:/Users/NurojiLukmansyah/Pictures'), WindowsPath('C:/Users/NurojiLukmansyah/Documents'), WindowsPath('C:/Users/NurojiLukmansyah/Videos'), WindowsPath('C:/Users/Public/Pictures')]
+2025-05-23 15:53:19,184 - LogsChecker - INFO - Starting WhatsApp NSFW Scanner
+2025-05-23 15:53:19,184 - LogsChecker - INFO - Phase 1: Scanning WhatsApp folders
+2025-05-23 15:53:19,184 - LogsChecker - INFO - Scanning directory: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState
+2025-05-23 15:53:19,185 - LogsChecker - INFO - Scanner thread started successfully
+2025-05-23 15:53:19,186 - LogsChecker - INFO - System tray icon created successfully
+2025-05-23 15:53:19,418 - LogsChecker - INFO - Checking image: C:\Users\NurojiLukmansyah\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\shared\transfers\2025_12\00e4ed6012944cedb69ee7d5f3c3bf73.jpg
